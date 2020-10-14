@@ -1,14 +1,14 @@
-const path = require("path");
+const path = require('path');
 
 module.exports = {
-  entry: "./src/index.js",
-  mode: "development",
+  entry: './src/index.js',
+  mode: 'development',
   output: {
-    path: path.resolve(__dirname, "./dist"),
-    filename: "[name].js",
+    path: path.resolve(__dirname, './dist'),
+    filename: 'bundle.js',
   },
   resolveLoader: {
-    modules: ["./node_modules", "./myLoaders"],
+    modules: ['./node_modules', './myLoaders'],
   },
   module: {
     rules: [
@@ -16,19 +16,19 @@ module.exports = {
         test: /\.js$/,
         use: [
           {
-            loader: "replaceLoader",
+            loader: 'replaceLoader',
           },
           {
-            loader: "replaaceLoaderAsync",
+            loader: 'replaaceLoaderAsync',
             options: {
-              name: "Davy!!!",
+              name: 'Davy!!!',
             },
           },
         ],
       },
       {
         test: /\.less$/,
-        use: ["style-loader", "css-loader", "less-loader"],
+        use: ['style-loader', 'css-loader', 'less-loader'],
       },
     ],
   },
