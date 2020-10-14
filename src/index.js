@@ -1,3 +1,3 @@
-import str from 'test.js';
+import str from './test.js';
 
 console.log(`hello ${str}`);
